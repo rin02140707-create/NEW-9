@@ -1,490 +1,134 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0, user-scalable=no"
->
-
-<title>動漫空間 9月中秋慶歡樂抽</title>
-
+<title>周年慶幸運抽獎</title>
 
 <style>
-
-/* =========================
-   基本設定
-========================= */
-
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    padding: 20px;
-
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(135deg, #fff4e6, #ffe1e8);
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Microsoft JhengHei",
-        sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8e7,
-            #ffe9d6,
-            #fff2df
-        );
 }
-
-
-/* =========================
-   主卡片
-========================= */
 
 .container {
-
-    width: 100%;
-    max-width: 460px;
-
-    background: #ffffff;
-
+    width: 92%;
+    max-width: 430px;
+    background: white;
     border-radius: 28px;
-
-    padding:
-        35px
-        24px
-        30px;
-
+    padding: 35px 22px;
     text-align: center;
-
-    box-shadow:
-        0 12px 40px
-        rgba(0,0,0,0.12);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
-
-
-/* =========================
-   標題
-========================= */
-
-.moon {
-
-    font-size: 48px;
-
-    margin-bottom: 5px;
-
-}
-
-
-.brand {
-
-    font-size: 22px;
-
-    font-weight: 700;
-
-    color: #7a5632;
-
-    letter-spacing: 3px;
-
-}
-
 
 .title {
-
-    margin-top: 8px;
-
-    font-size: 31px;
-
+    font-size: 36px;
     font-weight: 900;
-
-    color: #c43d32;
-
-    line-height: 1.35;
-
+    color: #c62828;
+    margin-bottom: 5px;
 }
 
-
-.english {
-
-    margin-top: 8px;
-
-    font-size: 14px;
-
-    color: #b28a63;
-
-    letter-spacing: 3px;
-
+.subtitle {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 25px;
 }
-
-
-/* =========================
-   活動規則
-========================= */
 
 .rule {
-
-    margin-top: 25px;
-
-    padding: 20px 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff8e8,
-            #fff0d6
-        );
-
-    border-radius: 18px;
-
-    color: #65452c;
-
-    font-size: 19px;
-
-    line-height: 1.8;
-
+    background: #fff4dc;
+    border-radius: 16px;
+    padding: 18px 10px;
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 30px;
 }
 
-
-.money {
-
-    display: inline-block;
-
-    margin: 0 3px;
-
-    font-size: 32px;
-
-    font-weight: 900;
-
-    color: #c43d32;
-
+.rule strong {
+    color: #d62828;
+    font-size: 30px;
 }
-
-
-.once {
-
-    margin-top: 5px;
-
-    font-size: 15px;
-
-    color: #9a7454;
-
-}
-
-
-/* =========================
-   金額輸入
-========================= */
-
-.input-area {
-
-    margin-top: 24px;
-
-}
-
-
-.input-title {
-
-    margin-bottom: 10px;
-
-    font-size: 16px;
-
-    color: #777;
-
-}
-
-
-input {
-
-    width: 100%;
-
-    padding: 15px;
-
-    border:
-        2px solid
-        #e1d6cc;
-
-    border-radius: 13px;
-
-    font-size: 25px;
-
-    text-align: center;
-
-    outline: none;
-
-    background: white;
-
-}
-
-
-input:focus {
-
-    border-color: #c43d32;
-
-}
-
-
-.confirm-btn {
-
-    width: 100%;
-
-    margin-top: 12px;
-
-    padding: 15px;
-
-    border: none;
-
-    border-radius: 13px;
-
-    background: #674c3b;
-
-    color: white;
-
-    font-size: 19px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-}
-
-
-.confirm-btn:disabled {
-
-    background: #bbb;
-
-}
-
-
-/* =========================
-   狀態文字
-========================= */
-
-.status {
-
-    min-height: 28px;
-
-    margin-top: 20px;
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    color: #674c3b;
-
-}
-
-
-/* =========================
-   抽獎按鈕
-========================= */
-
-.draw-area {
-
-    margin-top: 12px;
-
-}
-
 
 .draw-btn {
-
-    width: 190px;
-
-    height: 190px;
-
+    width: 210px;
+    height: 210px;
     border-radius: 50%;
-
-    border:
-        10px solid
-        #f4c66a;
-
-    background:
-        linear-gradient(
-            145deg,
-            #df5144,
-            #b72f2a
-        );
-
+    border: 11px solid #ffd166;
+    background: #d62828;
     color: white;
-
-    font-size: 28px;
-
+    font-size: 30px;
     font-weight: 900;
-
+    box-shadow: 0 10px 25px rgba(214,40,40,0.35);
     cursor: pointer;
-
-    box-shadow:
-        0 9px 22px
-        rgba(190,50,45,0.30);
-
-    transition:
-        transform 0.15s;
-
+    transition: transform 0.15s;
 }
-
 
 .draw-btn:active {
-
-    transform: scale(0.94);
-
+    transform: scale(0.93);
 }
-
 
 .draw-btn:disabled {
-
-    background: #bdbdbd;
-
-    border-color: #dddddd;
-
+    background: #aaa;
+    border-color: #ddd;
     box-shadow: none;
-
-    cursor: default;
-
 }
-
-
-/* 抽獎動畫 */
-
-.drawing {
-
-    animation:
-        pulse
-        0.45s
-        infinite alternate;
-
-}
-
-
-@keyframes pulse {
-
-    from {
-        transform: scale(0.95);
-    }
-
-    to {
-        transform: scale(1.04);
-    }
-
-}
-
-
-/* =========================
-   抽獎結果
-========================= */
 
 .result {
-
-    min-height: 105px;
-
-    margin-top: 22px;
-
-    font-size: 21px;
-
+    min-height: 130px;
+    margin-top: 30px;
+    font-size: 24px;
     font-weight: bold;
-
-    color: #6c4b35;
-
 }
-
 
 .prize {
-
     display: block;
-
-    margin-top: 5px;
-
-    font-size: 60px;
-
-    font-weight: 900;
-
-    color: #c43d32;
-
+    font-size: 64px;
+    color: #d62828;
+    margin-top: 10px;
+    animation: pop 0.5s ease;
 }
 
+@keyframes pop {
+    0% {
+        transform: scale(0);
+    }
 
-/* =========================
-   下一位顧客
-========================= */
+    70% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
 
 .reset-btn {
-
     display: none;
-
     width: 100%;
-
-    margin-top: 10px;
-
-    padding: 15px;
-
+    padding: 16px;
+    margin-top: 15px;
     border: none;
-
-    border-radius: 13px;
-
-    background: #674c3b;
-
+    border-radius: 14px;
+    background: #444;
     color: white;
-
-    font-size: 18px;
-
+    font-size: 20px;
     font-weight: bold;
-
     cursor: pointer;
-
 }
 
-
-/* =========================
-   頁尾
-========================= */
-
-.footer {
-
+.notice {
     margin-top: 25px;
-
-    padding-top: 18px;
-
-    border-top:
-        1px solid
-        #eee4dc;
-
+    color: #999;
     font-size: 13px;
-
-    color: #a58b77;
-
-    line-height: 1.7;
-
-}
-
-
-/* =========================
-   手機小螢幕
-========================= */
-
-@media (max-height: 700px) {
-
-    body {
-        align-items: flex-start;
-    }
-
-    .container {
-        margin-top: 5px;
-    }
-
-    .draw-btn {
-        width: 155px;
-        height: 155px;
-    }
-
 }
 
 </style>
@@ -493,134 +137,41 @@ input:focus {
 
 <body>
 
-
 <div class="container">
 
-
-    <!-- 中秋圖示 -->
-
-    <div class="moon">
-        🌕
-    </div>
-
-
-    <!-- 活動名稱 -->
-
-    <div class="brand">
-        動漫空間
-    </div>
-
-
     <div class="title">
-        9月中秋慶歡樂抽
+        🎉 周年慶 🎉
     </div>
 
-
-    <div class="english">
+    <div class="subtitle">
         LUCKY DRAW
     </div>
 
 
-
-    <!-- 活動規則 -->
-
     <div class="rule">
-
         單筆消費滿
-
-        <span class="money">
-            $888
-        </span>
-
+        <strong>$888</strong>
         <br>
-
-        即可獲得
-        <strong>1 次</strong>
-        抽獎機會
-
-        <div class="once">
-            ※ 消費金額不累加抽獎次數
-        </div>
-
+        即可獲得 1 次抽獎機會
     </div>
 
 
-
-    <!-- 金額輸入 -->
-
-    <div
-        class="input-area"
-        id="inputArea"
+    <button
+        class="draw-btn"
+        id="drawButton"
+        onclick="drawPrize()"
     >
+        START
+        <br>
+        開始抽獎
+    </button>
 
-        <div class="input-title">
-            請輸入本筆消費金額
-        </div>
-
-
-        <input
-            type="number"
-            id="amount"
-            inputmode="numeric"
-            placeholder="$ 消費金額"
-        >
-
-
-        <button
-            class="confirm-btn"
-            id="confirmButton"
-            onclick="confirmAmount()"
-        >
-            確認消費金額
-        </button>
-
-    </div>
-
-
-
-    <!-- 狀態 -->
-
-    <div
-        class="status"
-        id="status"
-    >
-        消費滿 $888 即可參加抽獎
-    </div>
-
-
-
-    <!-- 抽獎 -->
-
-    <div class="draw-area">
-
-        <button
-            class="draw-btn"
-            id="drawButton"
-            onclick="drawPrize()"
-            disabled
-        >
-
-            START
-            <br>
-            抽獎
-
-        </button>
-
-    </div>
-
-
-
-    <!-- 結果 -->
 
     <div
         class="result"
-        id="result"
-    >
+        id="result">
     </div>
 
-
-
-    <!-- 下一位 -->
 
     <button
         class="reset-btn"
@@ -631,196 +182,58 @@ input:focus {
     </button>
 
 
-
-    <!-- 頁尾 -->
-
-    <div class="footer">
-
-        🎑 動漫空間 9月中秋慶歡樂抽
-
-        <br>
-
-        單筆消費滿 $888 即享一次抽獎機會
-
+    <div class="notice">
+        每次抽獎完成後，請由現場人員操作下一位顧客
     </div>
-
 
 </div>
 
 
-
 <script>
 
-
-/* =========================
-   系統狀態
-========================= */
-
-let canDraw = false;
-
 let isDrawing = false;
+let hasDrawn = false;
 
-
-
-/* =========================
-   確認消費金額
-========================= */
-
-function confirmAmount() {
-
-
-    const amount =
-        Number(
-            document
-            .getElementById("amount")
-            .value
-        );
-
-
-    /* 沒輸入 */
-
-    if (!amount) {
-
-        alert(
-            "請輸入消費金額"
-        );
-
-        return;
-
-    }
-
-
-    /* 未滿 888 */
-
-    if (amount < 888) {
-
-        alert(
-            "本筆消費未滿 $888，無法參加抽獎"
-        );
-
-        return;
-
-    }
-
-
-    /*
-       只要滿 888
-       就只有一次抽獎機會
-
-       不管：
-       888
-       1776
-       5000
-       10000
-
-       都是一抽
-    */
-
-    canDraw = true;
-
-
-    /* 鎖定金額 */
-
-    document
-        .getElementById("amount")
-        .disabled = true;
-
-
-    document
-        .getElementById("confirmButton")
-        .disabled = true;
-
-
-    /* 顯示資格 */
-
-    document
-        .getElementById("status")
-        .innerHTML =
-        "🎉 符合抽獎資格！本筆可抽 <strong>1 次</strong>";
-
-
-    /* 開啟抽獎按鈕 */
-
-    document
-        .getElementById("drawButton")
-        .disabled = false;
-
-
-}
-
-
-
-/* =========================
-   抽獎
-========================= */
 
 function drawPrize() {
 
-
-    if (!canDraw || isDrawing) {
-
+    // 防止連續點擊
+    if (isDrawing || hasDrawn) {
         return;
-
     }
 
 
     isDrawing = true;
 
-    canDraw = false;
-
 
     const button =
-        document
-        .getElementById("drawButton");
-
+        document.getElementById("drawButton");
 
     const result =
-        document
-        .getElementById("result");
+        document.getElementById("result");
 
-
-    /* 鎖定按鈕 */
 
     button.disabled = true;
-
-
-    /* 動畫 */
-
-    button
-        .classList
-        .add("drawing");
-
 
     result.innerHTML =
         "✨ 幸運抽獎中... ✨";
 
 
-    document
-        .getElementById("status")
-        .innerHTML =
-        "請稍候，正在抽出您的幸運折扣";
-
-
-    /*
-       1.5 秒後顯示結果
-    */
-
+    // 等待 2 秒後公布結果
     setTimeout(function() {
 
 
         /*
         ==========================
-
         抽獎機率
+        ==========================
 
-        89折：70%
-        79折：15%
-        69折：10%
-        59折：5%
+        89 折：70%
+        79 折：15%
+        69 折：10%
+        59 折：5%
 
         合計：100%
-
-        ==========================
         */
 
 
@@ -828,10 +241,8 @@ function drawPrize() {
             Math.random() * 100;
 
 
-        let prize = "";
+        let prize;
 
-
-        /* 0 ~ 69.999 */
 
         if (random < 70) {
 
@@ -839,26 +250,17 @@ function drawPrize() {
 
         }
 
-
-        /* 70 ~ 84.999 */
-
         else if (random < 85) {
 
             prize = "79 折";
 
         }
 
-
-        /* 85 ~ 94.999 */
-
         else if (random < 95) {
 
             prize = "69 折";
 
         }
-
-
-        /* 95 ~ 99.999 */
 
         else {
 
@@ -867,135 +269,52 @@ function drawPrize() {
         }
 
 
-
-        /* 停止動畫 */
-
-        button
-            .classList
-            .remove("drawing");
-
-
-
-        /* 顯示結果 */
-
         result.innerHTML =
-
-            "🎊 恭喜獲得 🎊"
-
-            +
-
-            "<span class='prize'>"
-
-            +
-
-            prize
-
-            +
-
+            "🎊 恭喜獲得 🎊" +
+            "<span class='prize'>" +
+            prize +
             "</span>";
 
 
-
-        document
-            .getElementById("status")
-            .innerHTML =
-            "本筆抽獎已完成";
-
-
-
-        /* 顯示下一位 */
-
-        document
-            .getElementById("resetButton")
-            .style
-            .display =
-            "block";
-
-
+        hasDrawn = true;
         isDrawing = false;
 
 
-    }, 1500);
+        // 顯示下一位顧客
+        document.getElementById(
+            "resetButton"
+        ).style.display = "block";
 
+
+    }, 2000);
 
 }
 
 
-
-/* =========================
-   下一位顧客
-========================= */
 
 function nextCustomer() {
 
-
-    canDraw = false;
-
+    hasDrawn = false;
     isDrawing = false;
 
 
-    /* 清空金額 */
-
-    document
-        .getElementById("amount")
-        .value = "";
+    document.getElementById(
+        "result"
+    ).innerHTML = "";
 
 
-    document
-        .getElementById("amount")
-        .disabled = false;
+    document.getElementById(
+        "drawButton"
+    ).disabled = false;
 
 
-    /* 開啟確認按鈕 */
-
-    document
-        .getElementById("confirmButton")
-        .disabled = false;
-
-
-    /* 清空結果 */
-
-    document
-        .getElementById("result")
-        .innerHTML = "";
-
-
-    /* 狀態 */
-
-    document
-        .getElementById("status")
-        .innerHTML =
-        "消費滿 $888 即可參加抽獎";
-
-
-    /* 關閉抽獎按鈕 */
-
-    document
-        .getElementById("drawButton")
-        .disabled = true;
-
-
-    /* 隱藏下一位 */
-
-    document
-        .getElementById("resetButton")
-        .style
-        .display =
-        "none";
-
-
-    /* 游標回金額 */
-
-    document
-        .getElementById("amount")
-        .focus();
-
+    document.getElementById(
+        "resetButton"
+    ).style.display = "none";
 
 }
 
-
 </script>
-
 
 </body>
 </html>
