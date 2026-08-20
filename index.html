@@ -26,7 +26,7 @@ body {
     max-width: 430px;
     background: white;
     border-radius: 28px;
-    padding: 35px 22px;
+    padding: 35px 22px 22px;
     text-align: center;
     box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
@@ -106,9 +106,11 @@ body {
     0% {
         transform: scale(0);
     }
+
     70% {
         transform: scale(1.2);
     }
+
     100% {
         transform: scale(1);
     }
@@ -132,6 +134,15 @@ body {
     margin-top: 25px;
     color: #999;
     font-size: 13px;
+}
+
+.powered {
+    margin-top: 22px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
 </style>
 </head>
@@ -184,6 +195,10 @@ body {
         每次抽獎完成後，請由現場人員操作下一位顧客
     </div>
 
+    <div class="powered">
+        Powered by TINA
+    </div>
+
 </div>
 
 <script>
@@ -209,22 +224,33 @@ function drawPrize() {
     setTimeout(function() {
 
         /*
-        中秋抽獎機率
+        ==============================
+        9月中秋抽獎樂－機率設定
+        ==============================
 
         89折：70%
         79折：30%
 
         合計：100%
+        ==============================
         */
 
         const random = Math.random() * 100;
 
         let prize;
 
+        // 0 ~ 69.999... = 89折（70%）
         if (random < 70) {
+
             prize = "89 折";
-        } else {
+
+        }
+
+        // 70 ~ 99.999... = 79折（30%）
+        else {
+
             prize = "79 折";
+
         }
 
         result.innerHTML =
