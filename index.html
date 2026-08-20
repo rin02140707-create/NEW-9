@@ -2,981 +2,266 @@
 <html lang="zh-Hant">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-<meta name="viewport"
-      content="width=device-width,
-      initial-scale=1.0,
-      user-scalable=no">
-
-<title>9月中秋幸運抽獎</title>
+<title>9月中秋抽獎樂</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Microsoft JhengHei",
-        sans-serif;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff4e6,
-            #ffe1e8
-        );
-
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft JhengHei", sans-serif;
+    background: linear-gradient(135deg, #fff8e7, #ffe8b8);
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 20px;
 }
-
 
 .container {
-
-    width: 100%;
+    width: 92%;
     max-width: 430px;
-
     background: white;
-
     border-radius: 28px;
-
-    padding: 30px 22px;
-
+    padding: 35px 22px;
     text-align: center;
-
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,0.12);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.12);
 }
 
-
-/* 標題 */
-
-.title {
-
-    font-size: 36px;
-
-    font-weight: 900;
-
-    color: #c62828;
-
+.moon {
+    font-size: 55px;
     margin-bottom: 5px;
 }
 
+.title {
+    font-size: 36px;
+    font-weight: 900;
+    color: #b66a00;
+    margin-bottom: 5px;
+}
 
 .subtitle {
-
     font-size: 18px;
-
     color: #777;
-
     margin-bottom: 25px;
 }
 
-
-/* 活動規則 */
-
 .rule {
-
-    background: #fff4dc;
-
+    background: #fff5d6;
     border-radius: 16px;
-
     padding: 18px 10px;
-
     font-size: 20px;
-
     line-height: 1.7;
-
     margin-bottom: 30px;
 }
 
-
 .rule strong {
-
-    color: #d62828;
-
+    color: #d2691e;
     font-size: 30px;
 }
 
-
-/* 抽獎按鈕 */
-
 .draw-btn {
-
     width: 210px;
-
     height: 210px;
-
     border-radius: 50%;
-
     border: 11px solid #ffd166;
-
-    background: #d62828;
-
+    background: #d97706;
     color: white;
-
     font-size: 30px;
-
     font-weight: 900;
-
-    box-shadow:
-        0 10px 25px
-        rgba(214,40,40,0.35);
-
+    box-shadow: 0 10px 25px rgba(217,119,6,0.35);
     cursor: pointer;
-
     transition: transform 0.15s;
 }
 
-
 .draw-btn:active {
-
     transform: scale(0.93);
 }
 
-
 .draw-btn:disabled {
-
     background: #aaa;
-
     border-color: #ddd;
-
     box-shadow: none;
 }
 
-
-/* 抽獎結果 */
-
 .result {
-
     min-height: 130px;
-
     margin-top: 30px;
-
     font-size: 24px;
-
     font-weight: bold;
 }
 
-
 .prize {
-
     display: block;
-
     font-size: 64px;
-
-    color: #d62828;
-
+    color: #d2691e;
     margin-top: 10px;
-
     animation: pop 0.5s ease;
 }
 
-
 @keyframes pop {
-
     0% {
         transform: scale(0);
     }
-
     70% {
         transform: scale(1.2);
     }
-
     100% {
         transform: scale(1);
     }
 }
 
-
-/* 下一位 */
-
 .reset-btn {
-
     display: none;
-
     width: 100%;
-
     padding: 16px;
-
     margin-top: 15px;
-
     border: none;
-
     border-radius: 14px;
-
-    background: #444;
-
+    background: #555;
     color: white;
-
     font-size: 20px;
-
     font-weight: bold;
-
     cursor: pointer;
 }
-
-
-/* 抽獎紀錄按鈕 */
-
-.history-btn {
-
-    width: 100%;
-
-    margin-top: 25px;
-
-    padding: 13px;
-
-    border-radius: 12px;
-
-    border: 1px solid #ddd;
-
-    background: #f7f7f7;
-
-    color: #555;
-
-    font-size: 16px;
-
-    cursor: pointer;
-}
-
-
-/* 紀錄區 */
-
-.history-box {
-
-    display: none;
-
-    margin-top: 15px;
-
-    padding: 15px;
-
-    background: #f7f7f7;
-
-    border-radius: 15px;
-
-    text-align: left;
-}
-
-
-.history-title {
-
-    font-size: 18px;
-
-    font-weight: bold;
-
-    margin-bottom: 10px;
-
-    text-align: center;
-}
-
-
-/* 統計 */
-
-.stats {
-
-    background: white;
-
-    padding: 12px;
-
-    border-radius: 10px;
-
-    margin-bottom: 12px;
-
-    font-size: 14px;
-
-    line-height: 1.8;
-
-    text-align: center;
-}
-
-
-/* 每筆紀錄 */
-
-.history-list {
-
-    max-height: 220px;
-
-    overflow-y: auto;
-
-    font-size: 14px;
-}
-
-
-.history-item {
-
-    padding: 9px 5px;
-
-    border-bottom: 1px solid #ddd;
-}
-
 
 .notice {
-
-    margin-top: 20px;
-
+    margin-top: 25px;
     color: #999;
-
-    font-size: 12px;
-
-    line-height: 1.6;
+    font-size: 13px;
 }
-
 </style>
-
 </head>
-
 
 <body>
 
-
 <div class="container">
 
+    <div class="moon">🌕 🐇</div>
 
     <div class="title">
-        🎉 周年慶 🎉
+        9月中秋抽獎樂
     </div>
-
 
     <div class="subtitle">
-        LUCKY DRAW
+        中秋好運・幸運抽折扣
     </div>
-
 
     <div class="rule">
-
         單筆消費滿
-
         <strong>$888</strong>
-
         <br>
-
         即可獲得 1 次抽獎機會
-
     </div>
-
-
 
     <button
         class="draw-btn"
         id="drawButton"
-        onclick="drawPrize()">
-
+        onclick="drawPrize()"
+    >
         START
-
         <br>
-
         開始抽獎
-
     </button>
-
-
 
     <div
         class="result"
         id="result">
     </div>
 
-
-
     <button
         class="reset-btn"
         id="resetButton"
-        onclick="nextCustomer()">
-
+        onclick="nextCustomer()"
+    >
         下一位顧客
-
     </button>
-
-
-
-    <button
-        class="history-btn"
-        onclick="toggleHistory()">
-
-        📋 查看今日抽獎紀錄
-
-    </button>
-
-
-
-    <div
-        class="history-box"
-        id="historyBox">
-
-
-        <div class="history-title">
-
-            今日抽獎紀錄
-
-        </div>
-
-
-        <div
-            class="stats"
-            id="stats">
-        </div>
-
-
-        <div
-            class="history-list"
-            id="historyList">
-        </div>
-
-
-    </div>
-
-
 
     <div class="notice">
-
-        每次抽獎結果將自動記錄於本裝置
-
-        <br>
-
-        每位顧客抽獎完成後，
-        請由現場人員操作下一位顧客
-
+        每次抽獎完成後，請由現場人員操作下一位顧客
     </div>
-
 
 </div>
 
-
-
 <script>
 
-
-/* ==============================
-   基本設定
-============================== */
-
-
 let isDrawing = false;
-
 let hasDrawn = false;
-
-
-
-/* ==============================
-   取得今天日期
-============================== */
-
-
-function getToday() {
-
-    const now = new Date();
-
-    const year =
-        now.getFullYear();
-
-    const month =
-        String(
-            now.getMonth() + 1
-        ).padStart(2, "0");
-
-    const day =
-        String(
-            now.getDate()
-        ).padStart(2, "0");
-
-
-    return (
-        year +
-        "-" +
-        month +
-        "-" +
-        day
-    );
-
-}
-
-
-
-/* ==============================
-   讀取紀錄
-============================== */
-
-
-function getHistory() {
-
-    const today =
-        getToday();
-
-
-    const savedDate =
-        localStorage.getItem(
-            "lotteryDate"
-        );
-
-
-    /*
-    如果日期不同，
-    自動建立新一天紀錄
-    */
-
-    if (savedDate !== today) {
-
-        localStorage.setItem(
-            "lotteryDate",
-            today
-        );
-
-        localStorage.setItem(
-            "lotteryHistory",
-            JSON.stringify([])
-        );
-
-    }
-
-
-    const data =
-        localStorage.getItem(
-            "lotteryHistory"
-        );
-
-
-    if (!data) {
-
-        return [];
-
-    }
-
-
-    return JSON.parse(data);
-
-}
-
-
-
-/* ==============================
-   儲存抽獎結果
-============================== */
-
-
-function saveResult(prize) {
-
-    const history =
-        getHistory();
-
-
-    const now =
-        new Date();
-
-
-    const time =
-        now.toLocaleTimeString(
-            "zh-TW",
-            {
-                hour12: false
-            }
-        );
-
-
-    history.push({
-
-        time: time,
-
-        prize: prize
-
-    });
-
-
-    localStorage.setItem(
-        "lotteryHistory",
-        JSON.stringify(history)
-    );
-
-
-    updateHistory();
-
-}
-
-
-
-/* ==============================
-   抽獎
-============================== */
-
 
 function drawPrize() {
 
-
-    /*
-    防止客人連續點擊
-    */
-
-    if (
-        isDrawing ||
-        hasDrawn
-    ) {
-
+    if (isDrawing || hasDrawn) {
         return;
-
     }
-
 
     isDrawing = true;
 
-
-    const button =
-        document.getElementById(
-            "drawButton"
-        );
-
-
-    const result =
-        document.getElementById(
-            "result"
-        );
-
+    const button = document.getElementById("drawButton");
+    const result = document.getElementById("result");
 
     button.disabled = true;
 
-
-    result.innerHTML =
-        "✨ 幸運抽獎中... ✨";
-
-
-
-    /*
-    等待 2 秒後公布結果
-    */
+    result.innerHTML = "🌕 好運抽獎中... 🐇";
 
     setTimeout(function() {
 
-
         /*
-        ==========================
+        中秋抽獎機率
 
-        抽獎機率
+        89折：70%
+        79折：30%
 
-        89 折 = 70%
-
-        79 折 = 30%
-
-        合計 = 100%
-
-        ==========================
+        合計：100%
         */
 
-
-        const random =
-            Math.random() * 100;
-
+        const random = Math.random() * 100;
 
         let prize;
 
-
-
         if (random < 70) {
-
             prize = "89 折";
-
-        }
-
-        else {
-
+        } else {
             prize = "79 折";
-
         }
-
-
-
-        /*
-        顯示結果
-        */
-
 
         result.innerHTML =
-
-            "🎊 恭喜獲得 🎊" +
-
+            "🎉 恭喜抽中 🎉" +
             "<span class='prize'>" +
-
             prize +
-
             "</span>";
 
-
-
-        /*
-        儲存結果
-        */
-
-        saveResult(prize);
-
-
-
         hasDrawn = true;
-
         isDrawing = false;
-
-
-
-        /*
-        顯示下一位顧客
-        */
 
         document.getElementById(
             "resetButton"
-        ).style.display =
-            "block";
-
+        ).style.display = "block";
 
     }, 2000);
-
 }
-
-
-
-/* ==============================
-   下一位顧客
-============================== */
-
 
 function nextCustomer() {
 
-
     hasDrawn = false;
-
     isDrawing = false;
-
-
 
     document.getElementById(
         "result"
     ).innerHTML = "";
 
-
-
     document.getElementById(
         "drawButton"
     ).disabled = false;
 
-
-
     document.getElementById(
         "resetButton"
-    ).style.display =
-        "none";
-
+    ).style.display = "none";
 }
-
-
-
-/* ==============================
-   顯示 / 隱藏紀錄
-============================== */
-
-
-function toggleHistory() {
-
-
-    const box =
-        document.getElementById(
-            "historyBox"
-        );
-
-
-    if (
-        box.style.display ===
-        "block"
-    ) {
-
-        box.style.display =
-            "none";
-
-    }
-
-    else {
-
-        box.style.display =
-            "block";
-
-        updateHistory();
-
-    }
-
-}
-
-
-
-/* ==============================
-   更新紀錄畫面
-============================== */
-
-
-function updateHistory() {
-
-
-    const history =
-        getHistory();
-
-
-    const list =
-        document.getElementById(
-            "historyList"
-        );
-
-
-    const stats =
-        document.getElementById(
-            "stats"
-        );
-
-
-
-    let count89 = 0;
-
-    let count79 = 0;
-
-
-
-    history.forEach(function(item) {
-
-
-        if (
-            item.prize ===
-            "89 折"
-        ) {
-
-            count89++;
-
-        }
-
-
-        if (
-            item.prize ===
-            "79 折"
-        ) {
-
-            count79++;
-
-        }
-
-    });
-
-
-
-    /*
-    統計資料
-    */
-
-
-    stats.innerHTML =
-
-        "今日總抽獎：<b>" +
-        history.length +
-        "</b> 次" +
-
-        "<br>" +
-
-        "89 折：<b>" +
-        count89 +
-        "</b> 次" +
-
-        "　｜　" +
-
-        "79 折：<b>" +
-        count79 +
-        "</b> 次";
-
-
-
-    /*
-    沒有紀錄
-    */
-
-
-    if (
-        history.length === 0
-    ) {
-
-        list.innerHTML =
-
-            "<div style='text-align:center;color:#999'>" +
-
-            "今日尚無抽獎紀錄" +
-
-            "</div>";
-
-
-        return;
-
-    }
-
-
-
-    /*
-    最新紀錄放最上面
-    */
-
-
-    let html = "";
-
-
-    history
-        .slice()
-        .reverse()
-        .forEach(
-            function(item, index) {
-
-
-                const number =
-                    history.length -
-                    index;
-
-
-                html +=
-
-                    "<div class='history-item'>" +
-
-                    "第 " +
-                    number +
-                    " 抽" +
-
-                    "　" +
-
-                    item.time +
-
-                    "　➡️　" +
-
-                    "<b>" +
-                    item.prize +
-                    "</b>" +
-
-                    "</div>";
-
-            }
-        );
-
-
-    list.innerHTML = html;
-
-}
-
-
-
-/* 網頁開啟時先讀取紀錄 */
-
-updateHistory();
-
 
 </script>
 
-
 </body>
-
 </html>
